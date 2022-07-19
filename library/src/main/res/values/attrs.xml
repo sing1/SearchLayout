@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SearchLayout">
+        <attr name="search_text_color" format="color|reference"/>
+        <attr name="search_text_size" format="dimension|reference"/>
+        <attr name="search_text_color_hint" format="color|reference"/>
+        <attr name="search_button_color" format="color|reference"/>
+        <attr name="search_button_text_size" format="dimension|reference"/>
+        <attr name="search_background_color" format="color|reference"/>
+        <attr name="search_text_background" format="reference"/>
+        <attr name="search_drawable_left_icon" format="reference"/>
+        <attr name="search_drawable_padding" format="dimension|reference"/>
+        <attr name="search_hint" format="string|reference"/>
+        <attr name="search_single_line" format="boolean|reference"/>
+        <attr name="search_button_empty_txt" format="string|reference"/>
+        <attr name="search_button_txt" format="string|reference"/>
+        <attr name="search_padding" format="dimension|reference"/>
+        <attr name="search_padding_left" format="dimension|reference"/>
+        <attr name="search_padding_top" format="dimension|reference"/>
+        <attr name="search_padding_right" format="dimension|reference"/>
+        <attr name="search_padding_bottom" format="dimension|reference"/>
+        <attr name="search_height" format="dimension|reference"/>
+        <attr name="search_button_width" format="dimension|reference"/>
+        <attr name="search_imeOption">
+            <enum name="actionDone" value="0x00000006"/>
+            <enum name="actionGo" value="0x00000002"/>
+            <enum name="actionNext" value="0x00000005"/>
+            <enum name="actionNone" value="0x00000001"/>
+            <enum name="actionPrevious" value="0x00000007"/>
+            <enum name="actionSearch" value="0x00000003"/>
+            <enum name="actionSend" value="0x00000004"/>
+            <enum name="actionUnspecified" value="0x00000000"/>
+            <enum name="flagForceAscii" value="0x80000000"/>
+            <enum name="flagNavigateNext" value="0x8000000"/>
+            <enum name="flagNavigatePrevious" value="0x4000000"/>
+            <enum name="flagNoAccessoryAction" value="0x20000000"/>
+            <enum name="flagNoEnterAction" value="0x40000000"/>
+            <enum name="flagNoExtractUi" value="0x10000000"/>
+            <enum name="flagNoFullscreen" value="0x2000000"/>
+            <enum name="normal" value="0x000000ff"/>
+        </attr>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <sing.widget.SearchLayout
+        android:id="@+id/search_layout"
+        app:search_text_color="#313131"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:search_text_size="14sp"
+        app:search_button_color="#313131"
+        app:search_button_text_size="14sp"
+        app:search_background_color="#f0eff5"
+        app:search_text_background="@drawable/bg_search"
+        app:search_drawable_left_icon="@drawable/ic_search"
+        app:search_drawable_padding="5dp"
+        app:search_hint="搜索"
+        app:search_single_line="true"
+        app:search_button_empty_txt="取消"
+        app:search_padding="8dp"
+        app:search_button_txt="搜索"
+        app:search_height="40dp"
+        app:search_imeOption="actionSend"
+        app:search_button_width="40dp"
+        app:search_text_color_hint="#9a9a9c"/>
+        <!--app:search_padding_right="8dp"-->
+        <!--app:search_padding_top="8dp"-->
+        <!--app:search_padding_left="8dp"-->
+        <!--app:search_padding_bottom="8dp"-->
+</LinearLayout>
