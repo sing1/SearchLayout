@@ -17,6 +17,7 @@
         app:search_background_color="#f0eff5"
         app:search_text_background="@drawable/bg_search"
         app:search_drawable_left_icon="@drawable/ic_search"
+        app:search_drawable_left_icon_size="20dp"
         app:search_drawable_padding="5dp"
         app:search_hint="搜索"
         app:search_single_line="true"

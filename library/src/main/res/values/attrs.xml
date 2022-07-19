@@ -9,6 +9,7 @@
         <attr name="search_background_color" format="color|reference"/>
         <attr name="search_text_background" format="reference"/>
         <attr name="search_drawable_left_icon" format="reference"/>
+        <attr name="search_drawable_left_icon_size" format="dimension|reference"/>
         <attr name="search_drawable_padding" format="dimension|reference"/>
         <attr name="search_hint" format="string|reference"/>
         <attr name="search_single_line" format="boolean|reference"/>

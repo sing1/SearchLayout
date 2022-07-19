@@ -46,6 +46,7 @@ public class SearchLayout extends LinearLayout {
     private int searchBackgroundColor;//最外层父控件的背景颜色
     private Drawable searchTextBackground;//搜索框的背景
     private Drawable searchDrawableLeftIcon;// 左边的图标
+    private int searchDrawableLeftIconSize = 0;// 左边的图标大小,默认为0，此时大小为 searchHeight/3*2
     private int searchDrawablePadding;// 左边的图标的距离
     private String searchHint = "搜索";// 提示文字
     private boolean searchSingleLine;// 搜索框是否单行显示
@@ -87,6 +88,7 @@ public class SearchLayout extends LinearLayout {
 
         searchTextBackground = array.getDrawable(R.styleable.SearchLayout_search_text_background);
         searchDrawableLeftIcon = array.getDrawable(R.styleable.SearchLayout_search_drawable_left_icon);
+        searchDrawableLeftIconSize = array.getDimensionPixelSize(R.styleable.SearchLayout_search_drawable_left_icon_size,0);
         searchBackgroundColor = array.getColor(R.styleable.SearchLayout_search_background_color, Color.parseColor("#f0eff5"));
         searchPadding = array.getDimensionPixelSize(R.styleable.SearchLayout_search_padding, -1);
         searchPaddingLeft = array.getDimensionPixelSize(R.styleable.SearchLayout_search_padding_left, 16);
@@ -143,7 +145,11 @@ public class SearchLayout extends LinearLayout {
         if (searchImeOption != -1){
             et.setImeOptions(searchImeOption);
         }
-        searchDrawableLeftIcon.setBounds(0, 0, searchHeight/3*2, searchHeight/3*2);
+        if (searchDrawableLeftIconSize == 0){
+            searchDrawableLeftIcon.setBounds(0, 0, searchHeight/3*2, searchHeight/3*2);
+        }else{
+            searchDrawableLeftIcon.setBounds(0, 0, searchDrawableLeftIconSize, searchDrawableLeftIconSize);
+        }
         et.setCompoundDrawablePadding(searchDrawablePadding);
         et.setCompoundDrawables(searchDrawableLeftIcon, null, null, null);
 
