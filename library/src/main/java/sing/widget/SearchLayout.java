@@ -57,6 +57,11 @@ public class SearchLayout extends LinearLayout {
     private int searchPaddingTop;
     private int searchPaddingRight;
     private int searchPaddingBottom;
+    private int searchContentPadding;// 搜索框距离内层的距离,若有值，以下4个属性无效
+    private int searchContentPaddingLeft;
+    private int searchContentPaddingTop;
+    private int searchContentPaddingRight;
+    private int searchContentPaddingBottom;
     private int searchHeight;// 搜索框高度
     private int searchImeOption;// 键盘的选项
     private int searchButtonWidth;// 按钮宽度
@@ -95,6 +100,11 @@ public class SearchLayout extends LinearLayout {
         searchPaddingTop = array.getDimensionPixelSize(R.styleable.SearchLayout_search_padding_top, 16);
         searchPaddingRight = array.getDimensionPixelSize(R.styleable.SearchLayout_search_padding_right, 16);
         searchPaddingBottom = array.getDimensionPixelSize(R.styleable.SearchLayout_search_padding_bottom, 16);
+        searchContentPadding = array.getDimensionPixelSize(R.styleable.SearchLayout_search_content_padding, -1);
+        searchContentPaddingLeft = array.getDimensionPixelSize(R.styleable.SearchLayout_search_content_padding_left, 10);
+        searchContentPaddingTop = array.getDimensionPixelSize(R.styleable.SearchLayout_search_content_padding_top, 10);
+        searchContentPaddingRight = array.getDimensionPixelSize(R.styleable.SearchLayout_search_content_padding_right, 10);
+        searchContentPaddingBottom = array.getDimensionPixelSize(R.styleable.SearchLayout_search_content_padding_bottom, 10);
         searchTextColor = array.getColor(R.styleable.SearchLayout_search_text_color, Color.parseColor("#313131"));
         searchTextSize = array.getDimensionPixelSize(R.styleable.SearchLayout_search_text_size, 28);
         searchTextColorHint = array.getColor(R.styleable.SearchLayout_search_text_color_hint, Color.parseColor("#9a9a9c"));
@@ -165,6 +175,12 @@ public class SearchLayout extends LinearLayout {
             parent.setPadding(searchPadding, searchPadding, searchPadding, searchPadding);
         }else{
             parent.setPadding(searchPaddingLeft, searchPaddingTop, searchPaddingRight, searchPaddingBottom);
+        }
+
+        if (searchContentPadding != -1){
+            et.setPadding(searchContentPadding, searchContentPadding, searchContentPadding, searchContentPadding);
+        }else{
+            et.setPadding(searchContentPaddingLeft, searchContentPaddingTop, searchContentPaddingRight, searchContentPaddingBottom);
         }
 
         ivClear.setVisibility(GONE);

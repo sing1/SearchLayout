@@ -20,6 +20,11 @@
         <attr name="search_padding_top" format="dimension|reference"/>
         <attr name="search_padding_right" format="dimension|reference"/>
         <attr name="search_padding_bottom" format="dimension|reference"/>
+        <attr name="search_content_padding" format="dimension|reference"/>
+        <attr name="search_content_padding_left" format="dimension|reference"/>
+        <attr name="search_content_padding_top" format="dimension|reference"/>
+        <attr name="search_content_padding_right" format="dimension|reference"/>
+        <attr name="search_content_padding_bottom" format="dimension|reference"/>
         <attr name="search_height" format="dimension|reference"/>
         <attr name="search_button_width" format="dimension|reference"/>
         <attr name="search_imeOption">

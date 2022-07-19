@@ -16,8 +16,6 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:background="@android:color/transparent"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
             android:textCursorDrawable="@null"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"

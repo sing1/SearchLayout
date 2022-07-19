@@ -23,6 +23,7 @@
         app:search_single_line="true"
         app:search_button_empty_txt="取消"
         app:search_padding="8dp"
+        app:search_content_padding_left="10dp"
         app:search_button_txt="搜索"
         app:search_height="40dp"
         app:search_imeOption="actionSend"
