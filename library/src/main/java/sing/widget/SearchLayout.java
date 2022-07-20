@@ -193,8 +193,10 @@ public class SearchLayout extends LinearLayout {
 
     private void initListener() {
         et.setOnClickListener(v -> {
-            bt.setText(searchButtonEmptyTxt);
-            changeLayout(true);
+            if (bt.getVisibility() == View.GONE){ // 有个BUG，如果不加判断的话，在输入内容之后再次点击会隐藏清空按钮
+                setState(et.getText().toString());
+                changeLayout(true);
+            }
         });
         constraintLayout.setOnClickListener(v -> {
             bt.setText(searchButtonEmptyTxt);
@@ -204,7 +206,8 @@ public class SearchLayout extends LinearLayout {
         bt.setOnClickListener(v -> {
             if (onSearchListener != null) {
                 String str = bt.getText().toString().trim();
-                onSearchListener.onClick(str, str.equals(searchButtonTxt));
+                String searchContent = et.getText().toString().trim();
+                onSearchListener.onClick(searchContent, str.equals(searchButtonTxt));
             }
             if (bt.getText().toString().equals(searchButtonEmptyTxt)) {
                 changeLayout(false);
@@ -225,13 +228,7 @@ public class SearchLayout extends LinearLayout {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (TextUtils.isEmpty(s.toString())) {
-                    bt.setText(searchButtonEmptyTxt);
-                    ivClear.setVisibility(GONE);
-                } else {
-                    bt.setText(searchButtonTxt);
-                    ivClear.setVisibility(VISIBLE);
-                }
+                setState(s.toString());
             }
         });
 
@@ -240,6 +237,16 @@ public class SearchLayout extends LinearLayout {
         ivClear.setOnClickListener(v -> et.setText(""));
 
         setEditTextState(false);
+    }
+
+    private void setState(String content){
+        if (TextUtils.isEmpty(content)) {
+            bt.setText(searchButtonEmptyTxt);
+            ivClear.setVisibility(View.GONE);
+        } else {
+            bt.setText(searchButtonTxt);
+            ivClear.setVisibility(View.VISIBLE);
+        }
     }
 
     // 添加键盘回车键监听器
@@ -309,7 +316,7 @@ public class SearchLayout extends LinearLayout {
     }
 
     public interface OnSearchListener {
-        void onClick(String str, boolean isSearch);
+        void onClick(String searchStr, boolean isSearch);
     }
     public interface OnEditorActionListener{
         boolean onEditorAction(TextView v, int actionId, KeyEvent event);
