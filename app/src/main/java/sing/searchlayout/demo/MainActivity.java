@@ -29,5 +29,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         searchLayout.setImeOptions(EditorInfo.IME_ACTION_SEND);
+
+        searchLayout.getEditText().setText("11111111");
+        searchLayout.getEditText().performClick();
     }
 }

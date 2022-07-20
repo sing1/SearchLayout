@@ -299,6 +299,10 @@ public class SearchLayout extends LinearLayout {
         }, 300);
     }
 
+    public EditText getEditText(){
+        return et;
+    }
+
     // 设置键盘回车键事件
     public void setImeOptions(int imeOptions){
         et.setImeOptions(imeOptions);
